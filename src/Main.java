@@ -1,4 +1,5 @@
 import Class.*;
+import Interface.Eat;
 
 
 public class Main {
@@ -7,7 +8,6 @@ public class Main {
         int random_number1 = a + (int) (Math.random() * b); // Генерация 1-го числа
         return random_number1;
     }
-
     public static void main(String[] args) {
         MrSkuperfield mrSkuperfield = new MrSkuperfield("Мистер Скуперфильд");
         MrKrabs mrKrabs = new MrKrabs("Мистер Крабс");
@@ -41,13 +41,18 @@ public class Main {
             if (myVar == plants3.огороды){ allOut3 += myVar; }
             else { allOut3 += myVar + ", "; }
 
+        MrSkuperfield.Danger game = new MrSkuperfield.Danger();
 
+        Eat food = new Eat() {
+            @Override
+            public String eat() { return("Едят"); }
+        };
 
         // Вывод
 
-        System.out.println(mrKrabs.toString() + " " + mrKrabs.listen() + mrSkuperfield.toString() + "а и " + mrKrabs.sad() + ".");
+        System.out.println(mrKrabs.toString() + " " + mrKrabs.listen() + mrSkuperfield.toString() + "а и " + mrKrabs.sad() + ": " + mrSkuperfield.toString() + game.about() + ".");
         System.out.println(mrSkuperfield.toString() + " " + mrSkuperfield.said() + ", что " + mrSkuperfield.pay() + "и " + mrSkuperfield.escaped() + ".");
-        System.out.println(sprouts.toString() + " " + sprouts.knew() + "о " + mrSkuperfield.toString() + "е в телеграмме " + mrKrabs.toString() + "а.");
+        System.out.println(sprouts.toString() + " " + sprouts.knew() + sprouts.getLetter() + "о " + mrSkuperfield.toString() + "е в телеграмме " + mrKrabs.toString() + "а.");
         System.out.println(mrSkuperfield.toString() + " " + mrSkuperfield.dressed() + ".");
         System.out.println(they.toString() + " " + they.moved() + "на " + car.movedE() + " по городу.");
         System.out.println(mrSkuperfield.toString() + " " + mrSkuperfield.happy() + ": " + mrSkuperfield.moved() + " " + car.movedE() + ", " + mrSkuperfield.eat() + mrSkuperfield.talk() + ".");
@@ -59,9 +64,6 @@ public class Main {
         System.out.println(whiteBirds.toString() + " " + whiteBirds.swim() + ".");
         System.out.println(mrSkuperfield.toString() + " " + mrSkuperfield.happy() + " и " + mrSkuperfield.muted() + ".");
 
-
-
-        // 3 ЛАБА
         System.out.println(mrSkuperfield.toString() + " " + mrSkuperfield.fidgeted() + ". ");
         System.out.println(mrSkuperfield.toString() + " " + mrSkuperfield.wanted() + mrSkuperfield.see() + ", " + mrSkuperfield.caress() + "медвежонка.");
         System.out.print(mrKrabs.toString() + " " + mrKrabs.turned() + ", " + mrKrabs.drived(car.movedU()) + " на лесную дорогу, где " + kedri.overshadow() + " ");
@@ -80,7 +82,7 @@ public class Main {
         System.out.println(mrKrabs.toString() + " " + mrKrabs.see() + ", " + mrKrabs.open(false) + car.movedU() + ".");
         System.out.println(they.toString() + " " + they.turned() + ".");
         System.out.println(mrSkuperfield.toString() + " " + mrSkuperfield.sad() + ".");
-        System.out.println(mrKrabs.toString() + " " + mrKrabs.knew() + ".");
+        System.out.println(mrKrabs.aboutKrabs() + ".");
     }
 
 

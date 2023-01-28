@@ -4,6 +4,7 @@ import Interface.*;
 
 public class Car extends Person implements Speed, Moved, Turned{
 
+
         public Car(String name){setName(name);}
 
         public String moved(){return getName() + " поехала по лесу";}
@@ -13,9 +14,18 @@ public class Car extends Person implements Speed, Moved, Turned{
         public String turned(){return "поехала по лесной целине";}
         public String speed(){return "проехала";}
 
-
         @Override
         public String toString(){
                 return getName();
+        }
+        public String go() {
+                try {
+                        if (Math.random() <= 0.5)
+                                return "шел";
+                        else
+                                throw new NullPointerException();
+                } catch (NullPointerException e) {
+                        return "не пошел";
+                }
         }
 }

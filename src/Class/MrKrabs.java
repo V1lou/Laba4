@@ -2,8 +2,7 @@ package Class;
 import Abstract.Person;
 import Interface.*;
 
-public class MrKrabs extends Person implements Knew, See, Fix, Open, Muted, Happy, Sad, Listen, Turned, Drived, Choosed, Speed, Ruder {
-
+public class MrKrabs extends Person implements See, Fix, Open, Muted, Happy, Sad, Listen, Turned, Drived, Choosed, Speed, Ruder {
     public MrKrabs(String name){setName(name);}
 
     public String turned(){return "свернул с шоссе";}
@@ -18,9 +17,14 @@ public class MrKrabs extends Person implements Knew, See, Fix, Open, Muted, Happ
     public String open(Boolean q){return q ? "открыл " : "закрыл ";}
     public String fix(){return "чинил ";}
     public String see(){return "взял веревку в карман";}
-    public String knew(){return "узнал, что лес глухой";}
 
-
+    private class Knew{
+        public String about() { return " узнал о том, что лес глухой";}
+    }
+    public String aboutKrabs() {
+        Knew knew = new Knew();
+        return getName() + knew.about();
+    }
 
     @Override
     public String toString(){

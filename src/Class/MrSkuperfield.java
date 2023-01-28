@@ -2,9 +2,10 @@ package Class;
 import Abstract.Person;
 import Interface.*;
 
+import java.io.FileNotFoundException;
+
 
 public class MrSkuperfield extends Person implements Grew, Sad, Choosed, Knew, Muted, Turned, Talk, Eat, Moved, Happy, Escaped, Pay, Said, Fidgeted, Caress, Wanted, See, Dressed {
-
     public MrSkuperfield(String name){setName(name);}
 
     public String fidgeted(){return "заёрзал на месте от нетерпения";}
@@ -25,6 +26,12 @@ public class MrSkuperfield extends Person implements Grew, Sad, Choosed, Knew, M
     public String choosed(){return "вышел из ";}
     public String sad(){return "спотыкался";}
     public String grew(){return "восхищался";}
+
+    public static void run() throws FileNotFoundException {}
+
+    public static class Danger{
+        public String about() { return " затеял опасную игру";}
+    }
 
     @Override
     public String toString(){

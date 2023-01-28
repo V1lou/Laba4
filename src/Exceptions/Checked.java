@@ -1,16 +1,10 @@
 package Exceptions;
 
-public class Checked extends RuntimeException{
-    public Checked(){
-        super();
-    }
-    public Checked(String string){
-        super(string);
-    }
-    public Checked(String string, Throwable cause){
-        super(string, cause);
-    }
-    public Checked(Throwable cause){
-        super(cause);
+public class Checked extends Exception{
+    void print(String s) {
+        if (s == null) {
+            throw new NullPointerException("Exception: s is null!");
+        }
+        System.out.println("Inside method print: " + s);
     }
 }
