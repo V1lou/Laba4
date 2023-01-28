@@ -4,8 +4,12 @@ import Interface.*;
 
 public class Car extends Person implements Speed, Moved, Turned{
 
+        private boolean isBroken;
 
-        public Car(String name){setName(name);}
+        public Car(String name) {
+                setName(name);
+                isBroken = false;
+        }
 
         public String moved(){return getName() + " поехала по лесу";}
         public String movedU(){return getName().substring(0,5) + "у";}
@@ -27,5 +31,13 @@ public class Car extends Person implements Speed, Moved, Turned{
                 } catch (NullPointerException e) {
                         return "не пошел";
                 }
+        }
+
+        public boolean isBroken() {
+                return isBroken;
+        }
+
+        public void setBroken(boolean broken) {
+                isBroken = broken;
         }
 }

@@ -1,4 +1,5 @@
 import Class.*;
+import Exceptions.IsNotBrokenException;
 import Interface.Eat;
 
 
@@ -81,9 +82,27 @@ public class Main {
         System.out.println(mrSkuperfield.toString() + " " + mrSkuperfield.choosed() +  car.movedI() + ".");
         System.out.println(mrKrabs.toString() + " " + mrKrabs.see() + ", " + mrKrabs.open(false) + car.movedU() + ".");
         System.out.println(they.toString() + " " + they.turned() + ".");
+        car.setBroken(true); //ломаем машину
         System.out.println(mrSkuperfield.toString() + " " + mrSkuperfield.sad() + ".");
         System.out.println(mrKrabs.aboutKrabs() + ".");
+
+
+        try {
+            if (finishStory(car)) {
+                System.out.println("Конец истории \u2661");
+                return;
+            }
+        } catch (IsNotBrokenException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
+    public static boolean finishStory(Car car) throws IsNotBrokenException {
+        if (car.isBroken()) {
+            return true;
+        } else {
+            throw new IsNotBrokenException();
+        }
+    }
 
 }
